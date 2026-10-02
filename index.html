@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CADASTRO DE SÉRIES</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+            background-color: black;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .campo {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: white;
+        }
+
+        input {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        .personagens {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+
+        .botoes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        button {
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .salvar {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .consultar {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .editar {
+            background-color: #ffc107;
+            color: black;
+        }
+
+        .limpar {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        @media (max-width: 600px) {
+
+            .personagens {
+                grid-template-columns: 1fr;
+            }
+
+            .botoes {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Cadastro de Séries</h1>
+
+        <form>
+
+            <div class="campo">
+                <label for="nome">Nome da série:</label>
+                <input type="text" id="nome" name="nome"
+                       placeholder="Digite o nome da série" required>
+            </div>
+
+            <div class="campo">
+                <label for="streaming">Streaming onde é exibida:</label>
+                <input type="text" id="streaming" name="streaming"
+                       placeholder="Ex: Netflix, Prime Video, Disney+" required>
+            </div>
+
+            <div class="campo">
+                <label for="autor">Autor ou criador:</label>
+                <input type="text" id="autor" name="autor"
+                       placeholder="Digite o nome do autor ou criador" required>
+            </div>
+
+            <div class="campo">
+                <label for="temporadas">Quantidade de temporadas:</label>
+                <input type="number" id="temporadas" name="temporadas"
+                       min="1" placeholder="Ex: 5" required>
+            </div>
+
+            <div class="campo">
+                <label for="ano">Ano de criação:</label>
+                <input type="number" id="ano" name="ano"
+                       min="1900" max="2100"
+                       placeholder="Ex: 2020" required>
+            </div>
+
+            <div class="campo">
+
+                <label>Três principais personagens:</label>
+
+                <div class="personagens">
+
+                    <input type="text"
+                           name="personagem1"
+                           placeholder="Personagem 1"
+                           required>
+
+                    <input type="text"
+                           name="personagem2"
+                           placeholder="Personagem 2"
+                           required>
+
+                    <input type="text"
+                           name="personagem3"
+                           placeholder="Personagem 3"
+                           required>
+
+                </div>
+
+            </div>
+
+            <div class="botoes">
+
+                <button type="submit" class="salvar">
+                    Salvar
+                </button>
+
+                <button type="button" class="consultar">
+                    Consultar
+                </button>
+
+                <button type="button" class="editar">
+                    Editar
+                </button>
+
+                <button type="reset" class="limpar">
+                    Limpar
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
